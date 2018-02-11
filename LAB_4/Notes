@@ -1,0 +1,80 @@
+
+##File Handling
+
+System Calls:
+    open(), read(), write(), close(), lseek()
+
+Different System Calls-->
+
+##OPEN
+
+Modes:
+O_RDONLY
+O_WRONGLY
+O_RDWR
+O_APPEND
+0_CREAT
+int open(const char* fname, int mode)
+
+Eg:- To Open a File:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+int fd1 = open("demo.c", O_RDWR);
+
+##READ
+
+#include <unistd.h>
+
+ssize_t read(int fd, void* buf, size_t nbytes)
+
+Eg:- To Read a File:
+
+char Buff[10];
+int NoOfChar;
+NoOfChar = read(fd1, Buff, 10);
+
+##WRITE
+
+#include <unistd.h>
+
+ssize_t write(int fd, const void *buf, size_t n_bytes);
+
+
+##CLOSE
+
+#include <unistd.h>
+
+int close(int fd);
+
+##LSEEK
+
+#include <sys/types.h>
+#include <unistd.h>
+
+off_t lseek(int fd, off_t offset, int whence/x);
+
+MODES:-
+
+SEEK_SET:- The offset is set to offset bytes.
+SEEK_CUR:- The offset is set to its current location plus offset bytes.
+SEEK_END:- The offset is set to the size of the file plus offset bytes.
+
+**************************QUESTIONS**************************
+
+Q1. Program to display the contents of a file.
+Q2. Program to write student info into a file,
+            (name, roll no, city)
+Q3. Print all info from a file.
+            (All names, cities, roll nos)
+
+
+
+
+
+
+
+
+

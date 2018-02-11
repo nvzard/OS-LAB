@@ -1,0 +1,171 @@
+####COMMANDS#####
+
+1. pwd --> Present Working Directory
+2. ls --> list files/dir
+3. mkdir [name of dir] -->  Create a directory 
+4. cd --> change dir
+5. cd .. --> move back
+6. rmdir --> Remove DIr
+7. cat filename
+8. cat >> filename -->
+9. rm [filename] -->  remove file
+10. wc [filename] --> returns(lines | words | character_count | file_name)
+11. touch [filename] --> create a new file
+12. ifconfig --> 
+13. du --> disk usage
+14. df --> disk free
+15. ps --> process 
+16. kill [pid] --> kill a process
+17. man [command] --> man pages
+18. ls -l --> long listing format
+
+####FILE PERMISSIONS####
+1. Read(4)
+2. Write(2)
+3. Execute(1)
+
+drwxr-xr-x 2 vzard vzard 4096 Jan  8 11:35 Lab_1
+
+####Users####
+1.Owner
+2.Group
+3.Others
+
+19. chmod [permission] [file_name] -->
+20. ls -l > [filename] --> transfer output to file
+21. cal -->calander
+22. date --> date
+
+#### PIPES ####
+
+ls -l | wc   
+[output] | [input]
+
+redirect output of first command as input of second command
+
+{	ls -l > demo	}  
+{	wc -l demo		}	same as ls -l | wc
+
+
+"FILES AND DIRECTORIES ARE SAME"
+
+
+########################### SHELL SCRIPTING #####################
+
+
+echo 'Sup Bruh?'
+
+
+####CUSTOM COMMANDS#####
+
+1. grep
+2. gzip
+3. tar
+4. top
+5. ping
+6. wget
+7. whoami
+8. sudo
+9. dpkg
+10. apt-get
+
+############### LAB 2(LAB 1 Continues.....) ########################
+
+---------------->"VI EDITOR COMMANDS"
+
+1. yy --> copy, nyy -->copy n lines
+2. p -->paste
+3. x -> delete single character
+4. dd -->delete current line
+5. nx --> delete n characters
+6. Cursor Movement:
+    j->down
+    k->up
+    h->left
+    l->right
+
+This line is for testing purposes
+
+asdasd aw a dasd  asd lasd as
+
+---------------->"Shell Scription Continued"
+
+
+### PRE DEFINED VARIABLE ####
+
+echo $HOME
+echo $PWD
+
+### USER DEFINED VARIABLES ####
+
+a = 10
+b = 6
+
+### POSITIONAL VARIABLES ####
+
+sh file.sh lol lel
+
+echo $1 $2
+
+## BASIC SCRIPTS ###
+-->Script to create a new file in a folder:
+
+syntax: sh create_file.sh [dir] [file]
+
+code:
+mkdir $1
+touch $1/$2
+
+-->Print date in dd/mm/yy format
+
+syntax: sh date.sh
+
+code:
+set `date`
+echo $3/$2/$6
+
+###### ARITHMATIC OPERATIONS #######
+
+a=10
+b=20
+echo `expr $a + $b`
+
+syntak: sh simple_calculator.sh [no1] [no2]
+
+code:
+echo 'Addition:'
+echo `expr $1 + $2`
+echo 'Subtraction:'
+echo `expr $1 - $2`
+echo 'Multiplication:'
+echo `expr $1 \* $2`
+echo 'Division:'
+echo `expr $1 / $2`
+
+*****OTHER APPROACH^^^^^
+
+e = 'echo $1 /$2 | bc -l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+
+
+Q1. Write a shell script to read name, dept. and basic salary of an employee
+    and find the HRD, DA and ,AU
+
+    if BS > 10,000
+        HRA = 15% of BS
+        DA = 25% of BS
+        AU = 5% of BS
+    else
+        HRA = 13% of BS
+        DA = 20% of BS
+        AU = 3% of BS
+
+Q2. Write a shell script of find prime numbers in a list.
