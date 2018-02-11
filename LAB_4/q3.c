@@ -9,27 +9,37 @@ char buffer[20];
 
 int main(){
 
-    printf("NAME           ROLL_NO        CITY\n\n");
-
-    int status, size;
+    int size;
     int fd = open(test_file, O_RDONLY);
 
+    printf("ALL NAMES\n");
     do{
+        size = read(fd, buffer, 15);
+        buffer[size] = '\0';
+        printf("\n%s", buffer);
+        lseek(fd, 31, SEEK_CUR);
     
-    size = read(fd, buffer, 15);
-    buffer[size] = '\0';
-    printf("%s", buffer);
-    
-    //lseek(fd, 15, SEEK_CUR);
-    
-    size = read(fd, buffer, 15);
-    buffer[size] = '\0';
-    printf("%s", buffer);
-    
-    size = read(fd, buffer, 15);
-    buffer[size] = '\0';
-    printf("%s", buffer);
+    }while(size != 0);
 
+    lseek(fd, 15, SEEK_SET);
+    printf("\nALL ROLL NUMBERS\n");
+    do{
+        size = read(fd, buffer, 15);
+        buffer[size] = '\0';
+        printf("\n%s", buffer);
+        lseek(fd, 31, SEEK_CUR);
+
+    }while(size != 0);
+
+    lseek(fd, 30, SEEK_SET);
+    printf("\nALL CITIES\n");
+    do{
+
+        size = read(fd, buffer, 15);
+        buffer[size] = '\0';
+        printf("\n%s", buffer);
+    
+        lseek(fd, 31, SEEK_CUR);
     
     }while(size != 0);
 
