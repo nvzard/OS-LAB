@@ -1,12 +1,12 @@
-#include<sys/types.h>
+#include <sys/types.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include<string.h>
+#include <string.h>
 
 char *test_file = "q2_test_file.txt";
-char name[15], rollno[15], city[15];
+char buffer[15];
 
 void print_file(){
 
@@ -22,43 +22,42 @@ void print_file(){
     close(file);
 }
 
-void clear_buffer(){
-    for(int i=0; i<25; i++)
-        name[i] = rollno[i] = city[i] = ' ';
-    }
-
 int main(){
 
     int n;
 
-    int fd1 = open(test_file, O_RDWR);
+    int fd1 = open(test_file, O_WRONLY);
 
     printf("Enter the no of students: ");
     scanf(" %d", &n);
    
     for(int i=0; i<n; i++){
    
-    clear_buffer();
-
-    lseek(fd1, 0, SEEK_END);
+    //lseek(fd1, 0, SEEK_END);
     printf("##Student %d##\n", i+1);
     printf("Enter name: ");
-    scanf(" %[^\n]s",name);
-    write(fd1, name, 15);
-    lseek(fd1, 0, SEEK_END);
+    scanf(" %[^\n]%*c", buffer);
+    write(fd1, buffer, strlen(buffer));
+
+    for(int i=0; i<15-strlen(buffer); i++)
+        write(fd1, " ", 1);
 
     printf("Enter roll no: ");
-    scanf(" %[^\n]s",rollno);
-    write(fd1, rollno, 15);
-    lseek(fd1, 0, SEEK_END);
+    scanf(" %[^\n]%*c",buffer);
+    write(fd1, buffer, strlen(buffer));
+
+    for(int i=0; i<15-strlen(buffer); i++)
+        write(fd1, " ", 1);
 
     printf("Enter city: ");
-    scanf(" %[^\n]s", city);
-    write(fd1, city, 15);
-    lseek(fd1, 0, SEEK_END);
+    scanf(" %s", buffer);
+    write(fd1, buffer, strlen(buffer));
+
+    for(int i=0; i<15-strlen(buffer); i++)
+        write(fd1, " ", 1);
    
     write(fd1, "\n", 1);
-    lseek(fd1, 0, SEEK_END);
+    //lseek(fd1, 0, SEEK_END);
     
     }
 
