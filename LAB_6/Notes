@@ -1,0 +1,18 @@
+
+Q1. pipe   ls | wc
+
+Q2. IPC by pipe ( pass string):
+    a.) parent to child
+    b.) child to parent
+
+Q3. Thread Program
+    (in book)
+        gcc -pthreads name
+    12A34B56D
+
+Q4. Simulate ls > file.txt;
+
+Q5. Fork Program
+    (from book)
+
+

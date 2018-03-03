@@ -1,0 +1,64 @@
+Date:- 12/02/2018
+
+getpid() -->get id of the process
+getppid() -->get of the parent process
+
+init is the main process in linux. Its ID is 1.(parents ka parent)
+
+Id of `/` (Swapper) root process is 0;
+
+ORPHAN: Parent terminates first. Child process becomes orphan.
+
+Zombie Process: A process that has terminated but its entry is still there
+    in the process table.
+    to check the entry of ps `ps -ef` (defunctional)
+
+    child terminates without sending signal to parent.
+    do not write wait() parent section and use sleep() so child terminates
+    first.
+
+
+Question.
+Q1. Orphan
+Q2. Zombie.
+Q3.  Fork 
+
+            (p)
+           /   \
+         (c1)  (c2)
+        /   \
+     (c11)  (c12)
+Q4. Simulate cp command. Open one file in Rd mode another in WR mode.
+    Perform a copy function.
+
+Q5. Simulate mv command
+
+Used write(1, buff, size) to print at stdout.
+
+Use unlink() system call to delete the file. (simulate mv command)
+
+
+
+##dup system call
+
+It assigns a duplicate file descriptor
+OS always chooses the lowest number from the file descriptor table.
+
+fd2 = dup(fd1)
+
+
+ls > file.txt
+
+fd = open("file.txt", O_CREAT | O_RWONLY);
+close(1)  #close stdout
+execlp("bin/ls", "ls", NULL);
+dup(fd1);
+
+<------OR------>
+
+fd = open("file.txt", O_CREAET | O_RWONLY);
+close(1)  #close stdout
+dup(fd1);
+execlp("bin/ls", "ls", NULL);
+
+Q. Simulate wc < file1.txt > file2.txt

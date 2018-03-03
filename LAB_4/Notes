@@ -10,7 +10,7 @@ Different System Calls-->
 
 Modes:
 O_RDONLY
-O_WRONGLY
+O_WRONLY
 O_RDWR
 O_APPEND
 0_CREAT

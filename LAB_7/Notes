@@ -1,0 +1,17 @@
+#### SCHEDULING ALGORITHMS ####
+
+print waiting time, turnaround time and average
+
+Q1. Simulate FCFS
+Q2. Simlate Non-premitive SJF
+
+struct process{
+    int pid;
+    int at;
+    int bt;
+};
+
+int main(){
+    struct process p[10];
+}
+
