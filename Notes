@@ -1,0 +1,25 @@
+
+
+#include <semaphore.h>
+#include <pthread.h>
+
+sem_t full_sem; //Declare semaphore variables
+sem_t empty_sem;
+
+pthread_mutex_t buffer_mutex;
+
+
+sem_init(&full_sem, 0, size)
+
+0 = shared b/w threads
+1 = shared b/w processes
+
+sem_wait(&full_sem);
+sem_post(&empty_sem);
+
+pthread_mutex_lock(&buffer_mutex)
+pthread_mutex_unlock(&buffer_mutex)
+
+
+list.h data structure
+http://isis.poly.edu/kulesh/stuff/src/klist/

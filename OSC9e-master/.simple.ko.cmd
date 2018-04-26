@@ -1,0 +1,1 @@
+cmd_/home/vzard/Desktop/LABS/OS_LAB/OSC9e-master/simple.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/vzard/Desktop/LABS/OS_LAB/OSC9e-master/simple.ko /home/vzard/Desktop/LABS/OS_LAB/OSC9e-master/simple.o /home/vzard/Desktop/LABS/OS_LAB/OSC9e-master/simple.mod.o ;  true

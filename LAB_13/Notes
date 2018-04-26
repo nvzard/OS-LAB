@@ -1,0 +1,10 @@
+
+Q1. Memory Management:
+    (a) generate random free blocks (no 50-100) (size 100-1000)
+    (b) Read Process Size(n)
+    (c) Apply first fit, best fit, worst fit
+
+Q2. Page replacement algorithm and find page faults
+    (a) Generate a random sequence
+    (b) Read no of frames allocated
+    (c) Apply FIFO, Optimal, LRV
