@@ -18,7 +18,7 @@ pthread_mutex_t mutex;
 sem_t full, empty;
 
 /* the buffer */
-buffer_item buffer[BUFFER_SIZE];
+buffer_item buffer[BUFFER_SIZE]; //t-shirt ke liye
 
 /* buffer counter */
 int counter;
